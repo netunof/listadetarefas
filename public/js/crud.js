@@ -89,7 +89,6 @@ $(function () { //document.ready
                 $('#modalInfo').show();
                 $('#nomeTarefa').text(response.tarefa.nome);
                 $('#descricaoTarefa').text(response.tarefa.descricao);
-                $('#valorTarefa').text(response.tarefa.valor);
                 response.users.forEach(element => {
                     users += "<span>"+element.name+"</span>"+"<br>";
                 });
@@ -118,7 +117,6 @@ $(function () { //document.ready
                 $('#modalInfo').hide();
                 $('#nomeEdit').val(response.tarefa.nome);
                 $('#descricaoEdit').val(response.tarefa.descricao);
-                $('#valorEdit').val(response.tarefa.valor);
                 response.users.forEach(element => {
                     users += "<span>"+element.name+"</span>"+"<br>";
                 });

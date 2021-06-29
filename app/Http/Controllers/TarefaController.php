@@ -12,9 +12,7 @@ class TarefaController extends Controller
         $request->validate([
             'nome' => 'required',
             'descricao' => 'required',
-            'valor' => 'required',
             'tags' => 'required',
-            'lista_id' => 'required',
         ]);
         Tarefa::create($request->all());
         $tarefa = Tarefa::orderBy('created_at', 'desc')->first();
@@ -45,7 +43,6 @@ class TarefaController extends Controller
 
         $tarefa->nome = $dados['nome'];
         $tarefa->descricao = $dados['descricao'];
-        $tarefa->valor = $dados['valor'];
         $tarefa->update();
 
         return redirect('/');
