@@ -1,4 +1,3 @@
-## terminar o CRUD
 ## consertar lixeira
-## associar as tarefas com as listas
-## testar a aplicação
+## checkbox marcada no update
+## ajax começou a dar erro 500 do nada

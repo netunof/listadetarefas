@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function Dashboard(Request $request)
     {
         $apagados = Tarefa::onlyTrashed()->get();
-        $tags = Tag::all();
+        $tags = Tag::all()->toArray();
         $tarefas = Tarefa::all()->sortBy('updated_at')->toArray();
         $users = User::all()->toArray();
 

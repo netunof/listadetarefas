@@ -24,7 +24,6 @@ class TarefaUser extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->double('percentual_honorario', 3, 2)->default(0);
         });
     }
 

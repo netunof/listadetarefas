@@ -31,9 +31,12 @@
                                 @foreach ($users as $user)
                                 <div class="inline-flex" id="{{'labelUser'.$user['id']}}">
                                         <label class="items-center mt-3">
-                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-600" name='users[]' value="{{ $user['id'] }}"><span class="ml-2 text-gray-700">{{ $user['name'] }}</span>
+                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-yellow-600" name="users[]" value="{{ $user['id'] }}"
+                                            {{--@foreach ($tarefaUser as $tu)
+                                                @if ($tu['id'] == $user['id']) checked @endif
+                                            @endforeach--}}><span class="ml-2 text-gray-700">{{ $user['name'] }}</span>
                                         </label>
-                                    </div>
+                                </div>
                                 @endforeach
                             </div>
 

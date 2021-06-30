@@ -33,8 +33,8 @@ $(function () { //document.ready
     });
 
     //abrir modal de gerenciamento de tags
-    $("#botModalTag").on("click", function () {
-        $("#modalTags").show();
+    $("#botModalAdd").on("click", function () {
+        $("#modalAdd").show();
         return false;
     });
 

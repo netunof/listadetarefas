@@ -12,8 +12,8 @@
     <div class="pt-12">
         <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg relative">
-                <button id="botModalTag" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4">
-                    Gerenciar tags
+                <button id="botModalAdd" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4">
+                    Nova tarefa
                 </button>
                 <button id="botModalLixeira" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4">
                     Lixeira

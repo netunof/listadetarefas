@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Tarefa;
 
@@ -12,7 +13,7 @@ class TarefaController extends Controller
         $request->validate([
             'nome' => 'required',
             'descricao' => 'required',
-            'tags' => 'required',
+            'status' => 'required',
         ]);
         Tarefa::create($request->all());
         $tarefa = Tarefa::orderBy('created_at', 'desc')->first();
@@ -31,10 +32,14 @@ class TarefaController extends Controller
         return compact('tarefa', 'tags', 'users');
     }
 
-    public function edit(Tarefa $tarefa)
+    public function edit($id)
     {
-        $tags = $tarefa->tag()->get();
-        return compact('tarefa', 'tags');
+        $tarefa = Tarefa::findOrFail($id);
+        $tags = Tag::all();
+        $tarefaUser = $tarefa->user()->get()->toArray();
+        $tagTarefa = $tarefa->tag()->get()->toArray();
+
+        return compact('tarefa', 'tags', 'tarefaUser');
     }
 
     public function update(Request $request, Tarefa $tarefa)

@@ -44,7 +44,7 @@
                                         Tags
                                     </dt>
                                     <dd id="tagsTarefa" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {{-- aqui são listados os tags do tarefa --}}
+                                        {{-- aqui são listados os tags da tarefa --}}
                                     </dd>
                                 </div>
 

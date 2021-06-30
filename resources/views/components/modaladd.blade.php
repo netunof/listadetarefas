@@ -3,10 +3,10 @@
     'tags'
 ])
 
-<div id="modalAdd" class="modal fixed z-10 inset-0 overflow-y-auto invisible" aria-labelledby="modalCadastroTarefa" role="dialog" aria-modal="true">
+<div id="modalAdd" class="modal fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modalCadastroTarefa" role="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div  class="fechar fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-        <span class="invisible sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div class="sm:flex sm:items-start">
@@ -26,6 +26,15 @@
                                 <input type="text" name="descricao" id="descricao" placeholder="Descrição" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
                             </div>
                             <div class="mb-6">
+                                <label for="status" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Status</label>
+                                <select name="status" id="status" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required>
+                                    <option value="planejando">Planejando</option>
+                                    <option value="executando">Executando</option>
+                                    <option value="concluido">Concluído</option>
+                                    <option value="cancelado">Cancelado</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
                                 <span class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Usuários responsáveis</span>
                                 @foreach ($users as $user)
                                 <div class="inline-flex" id="{{'labelUser'.$user['id']}}">
@@ -43,8 +52,6 @@
                                 </label>
                             </div>
                             @endforeach
-
-                            <input type="hidden" name="lista_id" id="listaid"/>
                         </div>
                     </div>
                 </div>

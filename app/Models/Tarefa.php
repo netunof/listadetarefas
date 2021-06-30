@@ -12,16 +12,17 @@ class Tarefa extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'nome', 'descricao',
+        'nome', 'descricao', 'status',
     ];
+
+    public function tag()
+    {
+        return $this->belongsToMany(Tag::class, 'tag_tarefa', 'user_id', 'tag_id');
+    }
 
     public function user()
     {
         return $this->belongsToMany(User::class, 'tarefa_user');
     }
 
-    public function tag()
-    {
-        return $this->belongsToMany(Tag::class, 'tag_tarefa');
-    }
 }
